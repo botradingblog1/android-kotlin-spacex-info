@@ -24,7 +24,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         applicationVariants.all { variant ->
-            variant.buildConfigField "String", "SPACEX_BASE_URL", "\"https://api.spacexdata.com/v4\""
+            variant.buildConfigField "String", "SPACEX_BASE_URL", "\"https://api.spacexdata.com/\""
         }
     }
     compileOptions {
