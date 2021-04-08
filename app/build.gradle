@@ -27,6 +27,9 @@ android {
             variant.buildConfigField "String", "SPACEX_BASE_URL", "\"https://api.spacexdata.com/\""
         }
     }
+    buildFeatures {
+        dataBinding true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
