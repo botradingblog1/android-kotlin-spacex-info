@@ -8,39 +8,115 @@
             name="viewModel"
             type="com.justmobiledev.android.spacexinfo.ui.home.HomeViewModel" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/PageLayoutStyle"
-        android:background="@color/black"
-        tools:context=".ui.home.HomeFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            style="@style/PageLayoutStyle"
+            android:background="@color/black"
+            android:orientation="vertical"
+            tools:context=".ui.home.HomeFragment">
+            <ImageView
+                android:id="@+id/imageview_spacex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="SpaceX logo"
+                android:src="@drawable/spacex_logo_home"
+                tools:srcCompat="@drawable/spacex_logo" />
 
-        <ImageView
-            android:id="@+id/imageview_spacex"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="SpaceX logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/spacex_logo"
-            tools:srcCompat="@drawable/spacex_logo" />
+            <View style="@style/DividerStyle" />
+
+            <GridLayout
+                android:id="@+id/gridlayout"
+                tools:context=".ui.home.HomeFragment"
+                style="@style/GridStyle">
+
+                <TextView
+                    android:id="@+id/textview_name_label"
+                    android:text="@string/company_name_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_name"
+                    android:text="@{viewModel.companyInfo.name}"
+                    style="@style/FormTextStyle" />
 
 
+                <TextView
+                    android:id="@+id/textview_summary_label"
+                    android:text="@string/company_summary_label"
+                    style="@style/LabelStyle" />
 
-        <TextView
-            android:id="@+id/text_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="@{viewModel.companyInfo.name}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageview_spacex" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/textview_summary"
+                    style="@style/FormTextStyle"
+                    android:autoText="true"
+                    android:maxLines="5"
+                    android:text="@{viewModel.companyInfo.summary}" />
+
+                <TextView
+                    android:id="@+id/textview_founder_label"
+                    android:text="@string/company_founder_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_founder"
+                    android:text="@{viewModel.companyInfo.founder}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_founded_label"
+                    android:text="@string/company_founded_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_founded"
+                    android:text="@{viewModel.companyInfo.founded}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_employees_label"
+                    android:text="@string/company_employees_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_employees"
+                    android:text="@{`` + viewModel.companyInfo.employees}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_ceo_label"
+                    android:text="@string/company_ceo_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_ceo"
+                    android:text="@{viewModel.companyInfo.ceo}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_coo_label"
+                    android:text="@string/company_coo_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_coo"
+                    android:text="@{viewModel.companyInfo.coo}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_cto_label"
+                    android:text="@string/company_cto_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_cto"
+                    android:text="@{viewModel.companyInfo.cto}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_cto_propulsion_label"
+                    android:text="@string/company_cto_propulsion_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_cto_propulsion"
+                    android:text="@{viewModel.companyInfo.cto_propulsion}"
+                    style="@style/FormTextStyle" />
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
 </layout>

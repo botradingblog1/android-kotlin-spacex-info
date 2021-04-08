@@ -6,8 +6,19 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
+    <!-- Menu -->
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <!-- Company Page -->
+    <string name="company_name_label">Company Name</string>
+    <string name="company_summary_label">Summary</string>
+    <string name="company_founder_label">Founder</string>
+    <string name="company_founded_label">Founded</string>
+    <string name="company_employees_label">Employees</string>
+    <string name="company_ceo_label">CEO</string>
+    <string name="company_coo_label">COO</string>
+    <string name="company_cto_label">CTO</string>
+    <string name="company_cto_propulsion_label">CTO Propulsion</string>
 </resources>
