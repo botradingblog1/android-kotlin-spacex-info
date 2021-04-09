@@ -19,8 +19,8 @@
         app:cardCornerRadius="0dp"
         app:cardElevation="5dp"
         android:backgroundTint="@color/black"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp">
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,32 +32,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="16dp" />
+                app:layout_constraintGuide_begin="30dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/right_well"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="16dp" />
+            <ImageView
+                android:id="@+id/imageview_crew_icon"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
+                android:adjustViewBounds="true"
+                android:contentDescription="Crew logo"
+                app:layout_constraintEnd_toEndOf="@+id/left_well"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_crew_light"
+                tools:srcCompat="@drawable/ic_crew_light" />
 
             <TextView
-                android:id="@+id/textview_title"
+                android:id="@+id/textview_name"
                 android:text="@{crew.name}"
                 app:layout_constraintStart_toStartOf="@+id/left_well"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Asteroid title"
-                android:contentDescription="Name of the Near Earth Object"
-                style="@style/FormTextStyle" />
+                tools:text="Crew member name"
+                android:contentDescription="Crew member name"
+                style="@style/ListItemTitleTextStyle" />
 
             <TextView
-                android:id="@+id/textview_approachdate"
-                android:text="@{crew.agency}"
-                app:layout_constraintTop_toBottomOf="@+id/textview_title"
+                android:id="@+id/textview_agency"
+                android:text="@{String.format(@string/crew_list_agency, crew.agency)}"
+                app:layout_constraintTop_toBottomOf="@+id/textview_name"
                 app:layout_constraintStart_toStartOf="@+id/left_well"
-                tools:text="Close approach date"
-                android:contentDescription="Close approach date of the Near Earth Object"
-                style="@style/FormTextStyle" />
+                tools:text="Agency"
+                android:contentDescription="Agency"
+                style="@style/ListItemTextStyle" />
 
             <View
                 android:id="@+id/clickableOverlay"

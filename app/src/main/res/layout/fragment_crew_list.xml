@@ -18,6 +18,8 @@
                 android:text="@string/crew_page_title"
                 style="@style/PageTitleStyle" />
 
+            <View style="@style/DividerStyle" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_crew_list"
                 android:layout_width="match_parent"

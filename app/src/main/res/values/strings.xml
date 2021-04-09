@@ -25,7 +25,8 @@
     <string name="company_cto_label">CTO</string>
     <string name="company_cto_propulsion_label">CTO Propulsion</string>
 
-    <!-- Crew Page -->
+    <!-- Crew ListPage -->
     <string name="crew_page_title">SpaceX Crew Roster</string>
+    <string name="crew_list_agency">Agency: %s</string>
 
 </resources>
