@@ -5,8 +5,11 @@ import androidx.lifecycle.Transformations
 import com.justmobiledev.android.spacexinfo.api.DTOs.asDatabaseModel
 import com.justmobiledev.android.spacexinfo.api.Network
 import com.justmobiledev.android.spacexinfo.api.parsers.CompanyInfoParser
+import com.justmobiledev.android.spacexinfo.api.parsers.CrewParser
 import com.justmobiledev.android.spacexinfo.database.Models.DbCompany
+import com.justmobiledev.android.spacexinfo.database.Models.DbCrew
 import com.justmobiledev.android.spacexinfo.database.SpaceXDatabase
+import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import timber.log.Timber
@@ -14,15 +17,15 @@ import timber.log.Timber
 class SpaceXRepository(private val database: SpaceXDatabase) {
     val companyInfo: LiveData<DbCompany> = database.companyDao.getCompany()
 
+    val crewList: LiveData<List<DbCrew>> = database.crewDao.getCrew()
+
     suspend fun refreshCompanyInfo() {
-
         val response = Network.spaceXService.getCompanyInfo()
-
         if (response.isSuccessful && response.body() != null) {
             try {
                 val jsonObject = JSONObject(response.body())
 
-                // Convert JSON to domain objects
+                // Convert JSON to network objects
                 val companyInfo = CompanyInfoParser.parseCompanyInfoJsonResult(jsonObject)
                 Timber.d(companyInfo.toString())
                 Timber.d("Company info API returned result")
@@ -34,6 +37,32 @@ class SpaceXRepository(private val database: SpaceXDatabase) {
                 database.companyDao.insert(dbCompany)
 
                 Timber.d("Refresh Company info complete")
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+        } else {
+            Timber.e("getCompanyInfo call not successful: %s", response.errorBody().toString())
+        }
+    }
+
+    suspend fun refreshCrewInfo() {
+        val response = Network.spaceXService.getCrewInfo()
+        if (response.isSuccessful && response.body() != null) {
+            try {
+                val jsonResult = JSONArray(response.body())
+
+                // Convert JSON to network objects
+                val crewList = CrewParser.parseCrewJsonResult(jsonResult)
+                Timber.d(crewList.toString())
+                Timber.d("Crew info API returned result")
+
+                // Convert to database objects
+                val dbCrewList = crewList.asDatabaseModel()
+
+                // Insert records into db
+                database.crewDao.insert(dbCrewList)
+
+                Timber.d("Refresh Crew info complete")
             } catch (e: JSONException) {
                 e.printStackTrace()
             }

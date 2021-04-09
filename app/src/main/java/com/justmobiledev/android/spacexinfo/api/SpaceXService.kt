@@ -22,7 +22,7 @@ interface SpaceXService {
     ): Response<String>
 
     @GET("v4/crew")
-    suspend fun getCrew(
+    suspend fun getCrewInfo(
     ): Response<String>
 
     @GET("v4/launchpads")

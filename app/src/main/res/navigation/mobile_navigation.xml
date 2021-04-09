@@ -8,14 +8,14 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.justmobiledev.android.spacexinfo.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_company"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.justmobiledev.android.spacexinfo.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_crew"
+        android:name="com.justmobiledev.android.spacexinfo.ui.crew.CrewListFragment"
+        android:label="@string/menu_crew"
+        tools:layout="@layout/fragment_crew_list" />
 
     <fragment
         android:id="@+id/nav_slideshow"
