@@ -5,8 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.justmobiledev.android.spacexinfo.database.Models.DbCompany
-import com.justmobiledev.android.spacexinfo.database.Models.DbCrew
+import com.justmobiledev.android.spacexinfo.database.models.DbCrew
 
 
 @Dao

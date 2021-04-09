@@ -6,7 +6,8 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.justmobiledev.android.spacexinfo.R
-import com.justmobiledev.android.spacexinfo.database.Models.DbCrew
+import com.justmobiledev.android.spacexinfo.database.models.DbCrew
+import com.justmobiledev.android.spacexinfo.databinding.CrewListItemBinding
 
 /**
  * RecyclerView Adapter for setting up data binding on the items in the list.
@@ -19,7 +20,6 @@ class CrewListAdapter(val callback: CrewClickListener) : RecyclerView.Adapter<Cr
     var crewList: List<DbCrew> = emptyList()
         set(value) {
             field = value
-            // For an extra challenge, update this to use the paging library.
 
             // Notify any registered observers that the data set has changed.
             notifyDataSetChanged()
@@ -30,7 +30,7 @@ class CrewListAdapter(val callback: CrewClickListener) : RecyclerView.Adapter<Cr
      * an item.
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CrewViewHolder {
-        val withDataBinding: CrewItemBinding = DataBindingUtil.inflate(
+        val withDataBinding: CrewListItemBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
             CrewViewHolder.LAYOUT,
             parent,
@@ -51,16 +51,15 @@ class CrewListAdapter(val callback: CrewClickListener) : RecyclerView.Adapter<Cr
             it.crewClickCallback = callback
         }
     }
-
 }
 
 /**
  * ViewHolder for DevByte items. All work is done by data binding.
  */
-class CrewViewHolder(val viewDataBinding: CrewItemBinding) :
+class CrewViewHolder(val viewDataBinding: CrewListItemBinding) :
     RecyclerView.ViewHolder(viewDataBinding.root) {
     companion object {
         @LayoutRes
-        val LAYOUT = R.layout.crew_item
+        val LAYOUT = R.layout.crew_list_item
     }
 }

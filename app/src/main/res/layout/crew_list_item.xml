@@ -6,11 +6,11 @@
     <data>
         <variable
             name="crew"
-            type="com.udacity.asteroidradar.domain.Asteroid" />
+            type="com.justmobiledev.android.spacexinfo.database.models.DbCrew" />
 
         <variable
             name="crewClickCallback"
-            type="com.udacity.asteroidradar.ui.AsteroidClickListener" />
+            type="com.justmobiledev.android.spacexinfo.ui.crew.CrewClickListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -43,45 +43,33 @@
 
             <TextView
                 android:id="@+id/textview_title"
-                android:text="@{asteroid.codename}"
+                android:text="@{crew.name}"
                 app:layout_constraintStart_toStartOf="@+id/left_well"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Asteroid title"
                 android:contentDescription="Name of the Near Earth Object"
-                style="@style/text_title" />
+                style="@style/FormTextStyle" />
 
             <TextView
                 android:id="@+id/textview_approachdate"
-                android:text="@{asteroid.closeApproachDate}"
+                android:text="@{crew.agency}"
                 app:layout_constraintTop_toBottomOf="@+id/textview_title"
                 app:layout_constraintStart_toStartOf="@+id/left_well"
                 tools:text="Close approach date"
                 android:contentDescription="Close approach date of the Near Earth Object"
-                style="@style/text_body" />
+                style="@style/FormTextStyle" />
 
             <View
                 android:id="@+id/clickableOverlay"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="?attr/selectableItemBackground"
-                android:onClick="@{() -> asteroidClickCallback.onClick(asteroid)}"
+                android:onClick="@{() -> crewClickCallback.onClick(crew)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageview_hazardous"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="false"
-                android:cropToPadding="false"
-                android:scaleType="centerCrop"
-                app:statusIcon="@{asteroid.isPotentiallyHazardous}"
-                android:contentDescription="Icon to identify if the Near Earth Object is potentially hazardous"
-                app:layout_constraintEnd_toEndOf="@+id/right_well"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintTop_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

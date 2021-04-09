@@ -1,7 +1,6 @@
 package com.justmobiledev.android.spacexinfo.api.DTOs
 
-import com.justmobiledev.android.spacexinfo.database.Models.DbCompany
-import com.justmobiledev.android.spacexinfo.database.Models.DbCrew
+import com.justmobiledev.android.spacexinfo.database.models.DbCrew
 import com.squareup.moshi.JsonClass
 
 // DTO for Crew Info

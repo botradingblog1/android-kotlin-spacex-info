@@ -1,6 +1,6 @@
 package com.justmobiledev.android.spacexinfo.api.DTOs
 
-import com.justmobiledev.android.spacexinfo.database.Models.DbCompany
+import com.justmobiledev.android.spacexinfo.database.models.DbCompany
 import com.squareup.moshi.JsonClass
 
 // DTO for Company Info

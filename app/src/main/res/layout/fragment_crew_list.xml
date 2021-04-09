@@ -17,5 +17,11 @@
                 android:id="@+id/textview_crew_title"
                 android:text="@string/crew_page_title"
                 style="@style/PageTitleStyle" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_crew_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         </LinearLayout>
 </layout>

@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.justmobiledev.android.spacexinfo.database.DAOs.CompanyDao
 import com.justmobiledev.android.spacexinfo.database.DAOs.CrewDao
-import com.justmobiledev.android.spacexinfo.database.Models.DbCompany
-import com.justmobiledev.android.spacexinfo.database.Models.DbCrew
+import com.justmobiledev.android.spacexinfo.database.models.DbCompany
+import com.justmobiledev.android.spacexinfo.database.models.DbCrew
 
 // Database definitions
 @Database(entities = [DbCompany::class, DbCrew::class], version = 2, exportSchema = false)

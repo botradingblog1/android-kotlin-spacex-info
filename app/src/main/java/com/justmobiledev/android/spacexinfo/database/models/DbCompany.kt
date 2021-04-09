@@ -1,4 +1,4 @@
-package com.justmobiledev.android.spacexinfo.database.Models
+package com.justmobiledev.android.spacexinfo.database.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

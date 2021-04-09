@@ -1,13 +1,12 @@
 package com.justmobiledev.android.spacexinfo.repository
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Transformations
 import com.justmobiledev.android.spacexinfo.api.DTOs.asDatabaseModel
 import com.justmobiledev.android.spacexinfo.api.Network
 import com.justmobiledev.android.spacexinfo.api.parsers.CompanyInfoParser
 import com.justmobiledev.android.spacexinfo.api.parsers.CrewParser
-import com.justmobiledev.android.spacexinfo.database.Models.DbCompany
-import com.justmobiledev.android.spacexinfo.database.Models.DbCrew
+import com.justmobiledev.android.spacexinfo.database.models.DbCompany
+import com.justmobiledev.android.spacexinfo.database.models.DbCrew
 import com.justmobiledev.android.spacexinfo.database.SpaceXDatabase
 import org.json.JSONArray
 import org.json.JSONException
