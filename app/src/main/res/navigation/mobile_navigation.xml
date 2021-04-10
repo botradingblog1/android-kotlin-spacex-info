@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/crewDetailFragment"
         android:name="com.justmobiledev.android.spacexinfo.ui.crew.CrewDetailFragment"
-        android:label="CrewDetailFragment">
+        android:label="Crew Details">
         <argument
             android:name="selectedCrewMember"
             app:argType="com.justmobiledev.android.spacexinfo.database.models.DbCrew"/>
@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/nav_rockets"
         android:name="com.justmobiledev.android.spacexinfo.ui.rockets.RocketListFragment"
-        android:label="RocketListFragment" >
+        android:label="Rockets" >
         <action
             android:id="@+id/action_rocketListFragment_to_rocketDetailFragment"
             app:destination="@id/rocketDetailFragment" />
@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/rocketDetailFragment"
         android:name="com.justmobiledev.android.spacexinfo.ui.rockets.RocketDetailFragment"
-        android:label="RocketDetailFragment" >
+        android:label="Rocket Details" >
         <argument
             android:name="selectedRocket"
             app:argType="com.justmobiledev.android.spacexinfo.database.models.DbRocket"/>
@@ -49,7 +49,7 @@
     <fragment
         android:id="@+id/nav_launches"
         android:name="com.justmobiledev.android.spacexinfo.ui.upcoming_launches.LaunchListFragment"
-        android:label="LaunchListFragment" >
+        android:label="Launches" >
         <action
             android:id="@+id/action_launchListFragment_to_launchDetailFragment"
             app:destination="@id/launchDetailFragment" />
@@ -57,7 +57,7 @@
     <fragment
         android:id="@+id/launchDetailFragment"
         android:name="com.justmobiledev.android.spacexinfo.ui.upcoming_launches.LaunchDetailFragment"
-        android:label="LaunchDetailFragment" >
+        android:label="Launch Details" >
         <argument
             android:name="selectedLaunch"
             app:argType="com.justmobiledev.android.spacexinfo.database.models.DbLaunch"/>

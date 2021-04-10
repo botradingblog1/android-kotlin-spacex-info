@@ -2,10 +2,8 @@ package com.justmobiledev.android.spacexinfo
 
 import android.app.Application
 import android.os.Build
-import androidx.work.Constraints
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.NetworkType
-import androidx.work.WorkManager
+import androidx.work.*
+import com.justmobiledev.android.spacexinfo.workManager.RefreshWorkManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,7 +11,7 @@ import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 class SpaceXApplication : Application() {
-    /* val applicationScope = CoroutineScope(Dispatchers.Default)
+    val applicationScope = CoroutineScope(Dispatchers.Default)
 
     private fun delayedInit() = applicationScope.launch {
         setupRecurringWork()
@@ -38,12 +36,12 @@ class SpaceXApplication : Application() {
             RefreshWorkManager.WORK_NAME,
             ExistingPeriodicWorkPolicy.KEEP,
             repeatingRequest)
-    }*/
+    }
 
     override fun onCreate() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
 
-        //delayedInit()
+        delayedInit()
     }
 }

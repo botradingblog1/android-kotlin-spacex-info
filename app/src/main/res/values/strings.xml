@@ -8,6 +8,8 @@
     <string name="nav_header_subtitle">by Chris Scheid</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="nav_header_icon_attribution">Icons provided by https://www.flaticon.com</string>
+    <string name="nav_header_image_attribution">Images provided by SpaceX and NASA</string>
 
     <!-- Menu -->
     <string name="menu_company">Company</string>
@@ -62,4 +64,6 @@
     <string name="launch_flight_number_label">Flight Number</string>
     <string name="launch_date_label">Date</string>
     <string name="launch_wikipedia_label">Wikipedia</string>
+    <string name="rocket_launch_instructions">Drag the rocket up to launch!</string>
+
 </resources>
