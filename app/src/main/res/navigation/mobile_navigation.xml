@@ -15,11 +15,25 @@
         android:id="@+id/nav_crew"
         android:name="com.justmobiledev.android.spacexinfo.ui.crew.CrewListFragment"
         android:label="@string/menu_crew"
-        tools:layout="@layout/fragment_crew_list" />
+        tools:layout="@layout/fragment_crew_list" >
+        <action
+            android:id="@+id/action_nav_crew_to_crewDetailFragment"
+            app:destination="@id/crewDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/crewDetailFragment"
+        android:name="com.justmobiledev.android.spacexinfo.ui.crew.CrewDetailFragment"
+        android:label="CrewDetailFragment">
+        <argument
+            android:name="selectedCrewMember"
+            app:argType="com.justmobiledev.android.spacexinfo.database.models.DbCrew"/>
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.justmobiledev.android.spacexinfo.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
 </navigation>

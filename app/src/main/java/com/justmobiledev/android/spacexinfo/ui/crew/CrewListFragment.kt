@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.justmobiledev.android.spacexinfo.R
@@ -30,7 +31,7 @@ class CrewListFragment : Fragment() {
 
         crewListAdapter = CrewListAdapter(CrewClickListener {
             // Navigate to the detail fragment
-            // todo this.findNavController().navigate(MainFragmentDirections.actionShowDetail(it))
+            this.findNavController().navigate(CrewListFragmentDirections.actionNavCrewToCrewDetailFragment(it))
         })
 
         binding.root.findViewById<RecyclerView>(R.id.recyclerview_crew_list).apply {
