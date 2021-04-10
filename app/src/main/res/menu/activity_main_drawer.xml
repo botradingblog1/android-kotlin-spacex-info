@@ -16,5 +16,10 @@
             android:id="@+id/nav_rockets"
             android:icon="@drawable/ic_rocket_dark"
             android:title="@string/menu_rockets" />
+
+        <item
+            android:id="@+id/nav_launches"
+            android:icon="@drawable/ic_launch_dark"
+            android:title="@string/menu_launches" />
     </group>
 </menu>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="launch"
+            type="com.justmobiledev.android.spacexinfo.database.models.DbLaunch" />
+
+        <variable
+            name="launchClickCallback"
+            type="com.justmobiledev.android.spacexinfo.ui.upcoming_launches.LaunchClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="5dp"
+        android:backgroundTint="@color/black"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_well"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="30dp" />
+
+            <ImageView
+                android:id="@+id/imageview_launch_icon"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
+                android:adjustViewBounds="true"
+                android:contentDescription="Launch icon"
+                app:layout_constraintEnd_toEndOf="@+id/left_well"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/launch_placeholder"
+                tools:srcCompat="@drawable/launch_placeholder" />
+
+            <TextView
+                android:id="@+id/textview_name"
+                android:text="@{launch.name}"
+                app:layout_constraintStart_toStartOf="@+id/left_well"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Rocket name"
+                android:contentDescription="Rocket name"
+                style="@style/ListItemTitleTextStyle" />
+
+            <TextView
+                android:id="@+id/textview_first_flight"
+                android:text="@{String.format(@string/launch_list_flight_number, launch.flightNumber)}"
+                app:layout_constraintTop_toBottomOf="@+id/textview_name"
+                app:layout_constraintStart_toStartOf="@+id/left_well"
+                tools:text="Active"
+                android:contentDescription="Flight number"
+                style="@style/ListItemTextStyle" />
+
+            <View
+                android:id="@+id/clickableOverlay"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="@{() -> launchClickCallback.onClick(launch)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

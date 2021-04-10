@@ -6,14 +6,15 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.justmobiledev.android.spacexinfo.database.models.DbCrew
+import com.justmobiledev.android.spacexinfo.database.models.DbLaunch
 import com.justmobiledev.android.spacexinfo.database.models.DbRocket
 
 
 @Dao
-interface RocketDao {
-    @Query("select * from tbl_rocket")
-    fun getRockets(): LiveData<List<DbRocket>>
+interface LaunchDao {
+    @Query("select * from tbl_launch")
+    fun getLaunches(): LiveData<List<DbLaunch>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(rocket: List<DbRocket>)
+    suspend fun insert(launch: List<DbLaunch>)
 }

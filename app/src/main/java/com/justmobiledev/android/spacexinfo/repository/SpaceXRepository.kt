@@ -5,10 +5,12 @@ import com.justmobiledev.android.spacexinfo.api.DTOs.asDatabaseModel
 import com.justmobiledev.android.spacexinfo.api.Network
 import com.justmobiledev.android.spacexinfo.api.parsers.CompanyInfoParser
 import com.justmobiledev.android.spacexinfo.api.parsers.CrewParser
+import com.justmobiledev.android.spacexinfo.api.parsers.LaunchParser
 import com.justmobiledev.android.spacexinfo.api.parsers.RocketParser
 import com.justmobiledev.android.spacexinfo.database.models.DbCompany
 import com.justmobiledev.android.spacexinfo.database.models.DbCrew
 import com.justmobiledev.android.spacexinfo.database.SpaceXDatabase
+import com.justmobiledev.android.spacexinfo.database.models.DbLaunch
 import com.justmobiledev.android.spacexinfo.database.models.DbRocket
 import org.json.JSONArray
 import org.json.JSONException
@@ -21,6 +23,8 @@ class SpaceXRepository(private val database: SpaceXDatabase) {
     val crewList: LiveData<List<DbCrew>> = database.crewDao.getCrew()
 
     val rocketList: LiveData<List<DbRocket>> = database.rocketDao.getRockets()
+
+    val launchList: LiveData<List<DbLaunch>> = database.launchDao.getLaunches()
 
     suspend fun refreshCompanyInfo() {
         val response = Network.spaceXService.getCompanyInfo()
@@ -96,7 +100,33 @@ class SpaceXRepository(private val database: SpaceXDatabase) {
                 e.printStackTrace()
             }
         } else {
-            Timber.e("getCompanyInfo call not successful: %s", response.errorBody().toString())
+            Timber.e("getRocketInfo call not successful: %s", response.errorBody().toString())
+        }
+    }
+
+    suspend fun refreshLaunchInfo() {
+        val response = Network.spaceXService.getUpcomingLaunches()
+        if (response.isSuccessful && response.body() != null) {
+            try {
+                val jsonResult = JSONArray(response.body())
+
+                // Convert JSON to network objects
+                val launchList = LaunchParser.parseJsonResult(jsonResult)
+                Timber.d(launchList.toString())
+                Timber.d("Launch info API returned result")
+
+                // Convert to database objects
+                val dbLaunchList = launchList.asDatabaseModel()
+
+                // Insert records into db
+                database.launchDao.insert(dbLaunchList)
+
+                Timber.d("Refresh Launch info complete")
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+        } else {
+            Timber.e("Get upcoming launch call not successful: %s", response.errorBody().toString())
         }
     }
 }

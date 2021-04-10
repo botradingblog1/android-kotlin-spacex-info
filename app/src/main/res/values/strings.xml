@@ -13,6 +13,7 @@
     <string name="menu_company">Company</string>
     <string name="menu_crew">Crew</string>
     <string name="menu_rockets">Rockets</string>
+    <string name="menu_launches">Launches</string>
 
     <!-- Company Page -->
     <string name="company_name_label">Company Name</string>
@@ -50,4 +51,15 @@
     <string name="rocket_country_label">Country</string>
     <string name="rocket_wikipedia_label">Wikipedia</string>
 
+    <!-- Launch List Page -->
+    <string name="launch_list_page_title">Upcoming Launches</string>
+    <string name="launch_list_flight_number">Flight Number: %s</string>
+
+    <!-- Launch Detail Page -->
+    <string name="launch_detail_page_title">Launch Details</string>
+    <string name="launch_name_label">Name</string>
+    <string name="launch_description_label">Description</string>
+    <string name="launch_flight_number_label">Flight Number</string>
+    <string name="launch_date_label">Date</string>
+    <string name="launch_wikipedia_label">Wikipedia</string>
 </resources>

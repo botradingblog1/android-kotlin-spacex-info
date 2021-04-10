@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.justmobiledev.android.spacexinfo.ui.upcoming_launches.LaunchListViewModel" />
+    </data>
+        <LinearLayout
+            style="@style/PageLayoutStyle"
+            android:background="@color/black"
+            android:orientation="vertical"
+            tools:context=".ui.rockets.RocketListFragment">
+            <TextView
+                android:id="@+id/textview_page_title"
+                android:text="@string/rocket_list_page_title"
+                style="@style/PageTitleStyle" />
+
+            <View style="@style/DividerStyle" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_launch_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+</layout>

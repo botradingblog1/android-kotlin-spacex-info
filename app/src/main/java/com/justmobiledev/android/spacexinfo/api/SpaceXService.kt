@@ -29,15 +29,9 @@ interface SpaceXService {
     suspend fun getRocketInfo(
     ): Response<String>
 
-    @GET("v4/launches/past")
-    suspend fun getPastLaunches(
-    ): Response<String>
-
     @GET("v4/launches/upcoming")
     suspend fun getUpcomingLaunches(
     ): Response<String>
-
-
 }
 
 /**

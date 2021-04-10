@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.justmobiledev.android.spacexinfo.ui.upcoming_launches.LaunchDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/PageLayoutStyle"
+        android:background="@color/black"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textview_launch_detail_title"
+            android:text="@string/launch_detail_page_title"
+            style="@style/PageTitleStyle" />
+
+            <ImageView
+                android:id="@+id/imageview_launch_photo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/margin_large"
+                android:adjustViewBounds="true"
+                android:contentDescription="Crew member photo"
+                android:src="@drawable/launch_placeholder"
+                tools:srcCompat="@drawable/launch_placeholder" />
+
+            <View style="@style/DividerStyle" />
+
+            <GridLayout
+                android:id="@+id/gridlayout"
+                tools:context=".ui.home.HomeFragment"
+                style="@style/GridStyle">
+
+                <TextView
+                    android:id="@+id/textview_name_label"
+                    android:text="@string/crew_name_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_name"
+                    android:text="@{viewModel.launch.name}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_description_label"
+                    android:text="@string/launch_description_label"
+                    style="@style/LabelStyle" />
+
+                <TextView
+                    android:id="@+id/textview_description"
+                    style="@style/FormTextStyle"
+                    android:maxLines="5"
+                    android:text="@{viewModel.launch.description}" />
+
+                <TextView
+                    android:id="@+id/textview_flight_number_label"
+                    android:text="@string/launch_flight_number_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_stages"
+                    android:text="@{``+viewModel.launch.flightNumber}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_date_label"
+                    android:text="@string/launch_date_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_date"
+                    android:text="@{``+viewModel.launch.date}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_launch_wikipedia_label"
+                    android:text="@string/launch_wikipedia_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_wikipedia"
+                    android:text="@{viewModel.launch.wikipedia}"
+                    android:autoLink="web"
+                    style="@style/FormTextStyle" />
+            </GridLayout>
+        </LinearLayout>
+</layout>

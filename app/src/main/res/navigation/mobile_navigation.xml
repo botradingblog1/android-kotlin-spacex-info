@@ -46,5 +46,22 @@
             android:name="selectedRocket"
             app:argType="com.justmobiledev.android.spacexinfo.database.models.DbRocket"/>
     </fragment>
+    <fragment
+        android:id="@+id/nav_launches"
+        android:name="com.justmobiledev.android.spacexinfo.ui.upcoming_launches.LaunchListFragment"
+        android:label="LaunchListFragment" >
+        <action
+            android:id="@+id/action_launchListFragment_to_launchDetailFragment"
+            app:destination="@id/launchDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/launchDetailFragment"
+        android:name="com.justmobiledev.android.spacexinfo.ui.upcoming_launches.LaunchDetailFragment"
+        android:label="LaunchDetailFragment" >
+        <argument
+            android:name="selectedLaunch"
+            app:argType="com.justmobiledev.android.spacexinfo.database.models.DbLaunch"/>
+    </fragment>
+
 
 </navigation>
