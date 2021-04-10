@@ -31,9 +31,20 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.justmobiledev.android.spacexinfo.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_rockets"
+        android:name="com.justmobiledev.android.spacexinfo.ui.rockets.RocketListFragment"
+        android:label="RocketListFragment" >
+        <action
+            android:id="@+id/action_rocketListFragment_to_rocketDetailFragment"
+            app:destination="@id/rocketDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rocketDetailFragment"
+        android:name="com.justmobiledev.android.spacexinfo.ui.rockets.RocketDetailFragment"
+        android:label="RocketDetailFragment" >
+        <argument
+            android:name="selectedRocket"
+            app:argType="com.justmobiledev.android.spacexinfo.database.models.DbRocket"/>
+    </fragment>
 
 </navigation>

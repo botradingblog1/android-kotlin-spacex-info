@@ -25,8 +25,8 @@ interface SpaceXService {
     suspend fun getCrewInfo(
     ): Response<String>
 
-    @GET("v4/launchpads")
-    suspend fun getLaunchPads(
+    @GET("v4/rockets")
+    suspend fun getRocketInfo(
     ): Response<String>
 
     @GET("v4/launches/past")
@@ -37,9 +37,7 @@ interface SpaceXService {
     suspend fun getUpcomingLaunches(
     ): Response<String>
 
-    @GET("v4/rockets")
-    suspend fun getRockets(
-    ): Response<String>
+
 }
 
 /**

@@ -12,7 +12,7 @@
     <!-- Menu -->
     <string name="menu_company">Company</string>
     <string name="menu_crew">Crew</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_rockets">Rockets</string>
 
     <!-- Company Page -->
     <string name="company_name_label">Company Name</string>
@@ -34,4 +34,20 @@
     <string name="crew_name_label">Name</string>
     <string name="crew_agency_label">Agency</string>
     <string name="crew_status_label">Status</string>
+
+    <!-- Rocket List Page -->
+    <string name="rocket_list_page_title">Rockets</string>
+    <string name="rocket_list_first_flight">First Flight: %s</string>
+
+    <!-- Rocket Detail Page -->
+    <string name="rocket_detail_page_title">Rocket Details</string>
+    <string name="rocket_name_label">Name</string>
+    <string name="rocket_description_label">Description</string>
+    <string name="rocket_stages_label">Stages</string>
+    <string name="rocket_boosters_label">Boosters</string>
+    <string name="rocket_cost_per_launch_label">Cost Per Launch</string>
+    <string name="rocket_first_flight_label">First Flight</string>
+    <string name="rocket_country_label">Country</string>
+    <string name="rocket_wikipedia_label">Wikipedia</string>
+
 </resources>

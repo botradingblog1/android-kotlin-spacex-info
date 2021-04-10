@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.justmobiledev.android.spacexinfo.ui.rockets.RocketDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/PageLayoutStyle"
+        android:background="@color/black"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textview_rocket_detail_title"
+            android:text="@string/rocket_detail_page_title"
+            style="@style/PageTitleStyle" />
+
+            <ImageView
+                android:id="@+id/imageview_rocket_photo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/margin_large"
+                android:adjustViewBounds="true"
+                android:contentDescription="Crew member photo"
+                android:src="@drawable/crew_placeholder"
+                tools:srcCompat="@drawable/crew_placeholder" />
+
+            <View style="@style/DividerStyle" />
+
+            <GridLayout
+                android:id="@+id/gridlayout"
+                tools:context=".ui.home.HomeFragment"
+                style="@style/GridStyle">
+
+                <TextView
+                    android:id="@+id/textview_name_label"
+                    android:text="@string/crew_name_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_name"
+                    android:text="@{viewModel.rocket.name}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_description_label"
+                    android:text="@string/rocket_description_label"
+                    style="@style/LabelStyle" />
+
+                <TextView
+                    android:id="@+id/textview_agency"
+                    style="@style/FormTextStyle"
+                    android:maxLines="5"
+                    android:text="@{viewModel.rocket.description}" />
+
+                <TextView
+                    android:id="@+id/textview_stages_label"
+                    android:text="@string/rocket_stages_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_stages"
+                    android:text="@{``+viewModel.rocket.stages}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_boosters_label"
+                    android:text="@string/rocket_boosters_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_boosters"
+                    android:text="@{``+viewModel.rocket.boosters}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_rocket_cost_per_launch_label_label"
+                    android:text="@string/rocket_cost_per_launch_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_cost_per_launch"
+                    android:text="@{``+viewModel.rocket.costPerLaunch}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_rocket_first_flight_label"
+                    android:text="@string/rocket_first_flight_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_first_flight"
+                    android:text="@{viewModel.rocket.firstFlight}"
+                    style="@style/FormTextStyle" />
+
+                <TextView
+                    android:id="@+id/textview_rocket_wikipedia_label"
+                    android:text="@string/rocket_wikipedia_label"
+                    style="@style/LabelStyle" />
+                <TextView
+                    android:id="@+id/textview_wikipedia"
+                    android:text="@{viewModel.rocket.wikipedia}"
+                    android:autoLink="web"
+                    style="@style/FormTextStyle" />
+            </GridLayout>
+        </LinearLayout>
+</layout>
