@@ -51,6 +51,9 @@ class LaunchListFragment : Fragment() {
         viewModel.launchList.observe(viewLifecycleOwner, Observer<List<DbLaunch>> { launchList ->
             launchList?.apply {
                 launchListAdapter?.launchList = launchList
+
+                // Schedule launch notifications
+                viewModel.scheduleLaunchNotifications(launchList)
             }
         })
     }

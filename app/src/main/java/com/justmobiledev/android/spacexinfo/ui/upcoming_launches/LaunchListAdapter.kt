@@ -54,7 +54,7 @@ class LaunchListAdapter(val callback: LaunchClickListener) : RecyclerView.Adapte
 }
 
 /**
- * ViewHolder for DevByte items. All work is done by data binding.
+ * ViewHolder for launch items. All work is done by data binding.
  */
 class LaunchViewHolder(val viewDataBinding: LaunchListItemBinding) :
     RecyclerView.ViewHolder(viewDataBinding.root) {

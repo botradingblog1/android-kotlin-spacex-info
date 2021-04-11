@@ -15,7 +15,7 @@
     <string name="menu_company">Company</string>
     <string name="menu_crew">Crew</string>
     <string name="menu_rockets">Rockets</string>
-    <string name="menu_launches">Launches</string>
+    <string name="menu_launches">Upcoming Launches</string>
 
     <!-- Company Page -->
     <string name="company_name_label">Company Name</string>
@@ -65,5 +65,10 @@
     <string name="launch_date_label">Date</string>
     <string name="launch_wikipedia_label">Wikipedia</string>
     <string name="rocket_launch_instructions">Drag the rocket up to launch!</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">SpaceX Notification Channel</string>
+    <string name="notification_channel_description">SpaceX Notification Channel</string>
+    <string name="notification_description">Get ready! Only 10 minutes until launch...</string>
 
 </resources>

@@ -13,5 +13,4 @@ import kotlinx.coroutines.launch
 
 class CrewDetailViewModel(application: Application) : AndroidViewModel(application) {
     var crewMember = MutableLiveData<DbCrew>(null)
-
 }

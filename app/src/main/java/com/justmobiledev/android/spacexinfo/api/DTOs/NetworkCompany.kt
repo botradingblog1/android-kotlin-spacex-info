@@ -20,7 +20,7 @@ data class NetworkCompany(
 
 
 /**
- * Convert Network Company Info model into Database model
+ * Convert Network model into Database model
  */
 fun NetworkCompany.asDatabaseModel(): DbCompany {
    return DbCompany (

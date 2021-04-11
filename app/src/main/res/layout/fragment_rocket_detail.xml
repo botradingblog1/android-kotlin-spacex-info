@@ -9,6 +9,9 @@
             type="com.justmobiledev.android.spacexinfo.ui.rockets.RocketDetailViewModel" />
     </data>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -54,7 +57,7 @@
                 <TextView
                     android:id="@+id/textview_agency"
                     style="@style/FormTextStyle"
-                    android:maxLines="5"
+                    android:layout_width="260dp"
                     android:text="@{viewModel.rocket.description}" />
 
                 <TextView
@@ -104,4 +107,5 @@
                     style="@style/FormTextStyle" />
             </GridLayout>
         </LinearLayout>
+    </ScrollView>
 </layout>

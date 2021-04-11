@@ -47,7 +47,7 @@ class CrewListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Observer change of Asteroid list in view model and populate adapter
+        // Observer change of crew list in view model and populate adapter
         viewModel.crewList.observe(viewLifecycleOwner, Observer<List<DbCrew>> { crewList ->
             crewList?.apply {
                 crewListAdapter?.crewList = crewList

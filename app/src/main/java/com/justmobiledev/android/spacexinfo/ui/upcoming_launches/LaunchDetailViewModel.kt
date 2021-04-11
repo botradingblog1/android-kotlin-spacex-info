@@ -15,5 +15,4 @@ import kotlinx.coroutines.launch
 
 class LaunchDetailViewModel(application: Application) : AndroidViewModel(application) {
     var launch = MutableLiveData<DbLaunch>(null)
-
 }

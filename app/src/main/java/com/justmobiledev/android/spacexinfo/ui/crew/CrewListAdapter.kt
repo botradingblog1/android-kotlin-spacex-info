@@ -54,7 +54,7 @@ class CrewListAdapter(val callback: CrewClickListener) : RecyclerView.Adapter<Cr
 }
 
 /**
- * ViewHolder for DevByte items. All work is done by data binding.
+ * ViewHolder for crew items. All work is done by data binding.
  */
 class CrewViewHolder(val viewDataBinding: CrewListItemBinding) :
     RecyclerView.ViewHolder(viewDataBinding.root) {

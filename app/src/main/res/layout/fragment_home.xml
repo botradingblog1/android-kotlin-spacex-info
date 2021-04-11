@@ -10,7 +10,7 @@
     </data>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <LinearLayout
             style="@style/PageLayoutStyle"
             android:background="@color/black"
@@ -50,8 +50,7 @@
                 <TextView
                     android:id="@+id/textview_summary"
                     style="@style/FormTextStyle"
-                    android:autoText="true"
-                    android:maxLines="5"
+                    android:layout_width="260dp"
                     android:text="@{viewModel.companyInfo.summary}" />
 
                 <TextView

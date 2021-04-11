@@ -30,10 +30,9 @@ class CrewDetailFragment : Fragment() {
 
         binding.viewModel = viewModel
 
-        // Load crew photo
+        // Load crew photo with Glide
         val options: RequestOptions = RequestOptions()
             .placeholder(R.drawable.crew_placeholder)
-
         Glide.with(this).load(selectedCrewMember.image).apply(options).into(binding.imageviewCrewPhoto)
 
         return binding.root

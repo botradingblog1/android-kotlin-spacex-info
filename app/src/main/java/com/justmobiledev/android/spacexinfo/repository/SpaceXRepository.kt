@@ -19,11 +19,8 @@ import timber.log.Timber
 
 class SpaceXRepository(private val database: SpaceXDatabase) {
     val companyInfo: LiveData<DbCompany> = database.companyDao.getCompany()
-
     val crewList: LiveData<List<DbCrew>> = database.crewDao.getCrew()
-
     val rocketList: LiveData<List<DbRocket>> = database.rocketDao.getRockets()
-
     val launchList: LiveData<List<DbLaunch>> = database.launchDao.getLaunches()
 
     suspend fun refreshCompanyInfo() {

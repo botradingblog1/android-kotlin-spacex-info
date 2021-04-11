@@ -31,10 +31,9 @@ class LaunchDetailFragment : Fragment() {
 
         binding.viewModel = viewModel
 
-        // Load launch photo
+        // Load launch photo with Glide
         val options: RequestOptions = RequestOptions()
             .placeholder(R.drawable.launch_placeholder)
-
         Glide.with(this).load(selectedLaunchMember.image).apply(options).into(binding.imageviewLaunchPhoto)
 
         return binding.root

@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.justmobiledev.android.spacexinfo.notifications.createChannel
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,12 +35,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home, R.id.nav_crew, R.id.nav_rockets), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
+        // Create notification channel
+        createChannel(applicationContext)
     }
 
     override fun onSupportNavigateUp(): Boolean {

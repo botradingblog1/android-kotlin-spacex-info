@@ -91,7 +91,7 @@
                 <TextView
                     android:id="@+id/textview_description"
                     style="@style/FormTextStyle"
-                    android:maxLines="5"
+                    android:layout_width="260dp"
                     android:text="@{viewModel.launch.description}" />
 
                 <TextView
