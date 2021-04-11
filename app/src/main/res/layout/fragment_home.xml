@@ -11,7 +11,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             style="@style/PageLayoutStyle"
             android:background="@color/black"
             android:orientation="vertical"
@@ -23,14 +23,21 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="SpaceX logo"
                 android:src="@drawable/spacex_logo_home"
-                tools:srcCompat="@drawable/spacex_logo" />
+                tools:srcCompat="@drawable/spacex_logo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
 
-            <View style="@style/DividerStyle" />
+            <View style="@style/DividerStyle"
+                android:id="@+id/divider"
+                app:layout_constraintTop_toBottomOf="@+id/imageview_spacex"
+                app:layout_constraintLeft_toLeftOf="parent"/>
 
             <GridLayout
                 android:id="@+id/gridlayout"
                 tools:context=".ui.home.HomeFragment"
-                style="@style/GridStyle">
+                style="@style/GridStyle"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                app:layout_constraintLeft_toLeftOf="parent">
 
                 <TextView
                     android:id="@+id/textview_name_label"
@@ -116,6 +123,6 @@
                     android:text="@{viewModel.companyInfo.cto_propulsion}"
                     style="@style/FormTextStyle" />
             </GridLayout>
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
