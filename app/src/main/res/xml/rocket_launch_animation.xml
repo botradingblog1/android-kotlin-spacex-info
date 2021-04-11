@@ -6,11 +6,11 @@
     <Transition
         app:constraintSetStart="@+id/start"
         app:constraintSetEnd="@+id/end"
-        app:duration="10000">
+        app:duration="5000">
         <OnSwipe
             motion:dragDirection="dragUp"
             motion:touchAnchorId="@id/rocket"
-            motion:touchAnchorSide="right" />
+            motion:touchAnchorSide="top" />
         <KeyFrameSet>
             <KeyPosition
                 app:framePosition="10"
