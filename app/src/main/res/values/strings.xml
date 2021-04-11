@@ -62,7 +62,7 @@
     <string name="launch_name_label">Name</string>
     <string name="launch_description_label">Description</string>
     <string name="launch_flight_number_label">Flight Number</string>
-    <string name="launch_date_label">Date</string>
+    <string name="launch_date_label">Launch Date</string>
     <string name="launch_wikipedia_label">Wikipedia</string>
     <string name="rocket_launch_instructions">Drag the rocket up to launch!</string>
 
